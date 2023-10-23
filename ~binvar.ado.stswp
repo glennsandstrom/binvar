@@ -75,6 +75,7 @@ program define binvar
     /***************************************************************************/
       if ("`lastbin'"!="") {
           if(!strpos("`lastbin'", "missing") & !strpos("`lastbin'", "expand") ) {
+              set trace off
               di as error "Invalid syntax for option lastbin; valid missing and expand with no abbreviations"
               error 197
           }

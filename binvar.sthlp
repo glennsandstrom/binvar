@@ -17,9 +17,8 @@ varlist
 {synopthdr}
 {synoptline}
 {syntab:Main}
-{synopt:{opt start(integer)}}Start of first intervall.{p_end}
-{synopt:{opt end(integer)}}Start of last intervall.{p_end}
 {synopt:{opt interval(integer)}}Length of interval.{p_end}
+{synopt:{opt start(integer)}}Start of first intervall.{p_end}
 {synopt:{opt generate(newname)}}Name of the gererated variable.{p_end}
 {synopt:{opt replace}}Replace newname if it exists.{p_end}
 {synoptline}

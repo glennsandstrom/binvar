@@ -34,15 +34,24 @@ do binvar.ado
 
 	// check that bpgrp have corect values
 	binvar bp, interval(5) lastbin(missing) gen(bpgrp) debug replace
-	//assert inrange(bp, 125, 129) if bpgrp==0
-	//assert inrange(bp, 185, 189) if bpgrp==12
+	assert inrange(bp, 125, 129) if bpgrp==0
+	assert inrange(bp, 180, 184) if bpgrp==11
+    assert mi(bpgrp) if inrange(bp, 185, 185)
 	tab bpgrp, mi
 	
 	
-	
+	binvar bp, interval(5) lastbin(expand) gen(bpgrp) debug replace
+	assert inrange(bp, 125, 129) if bpgrp==0
+	assert inrange(bp, 180, 185) if bpgrp==11
+    assert !mi(bpgrp)
+	tab bpgrp, mi
+    
     exit
-	tab bpgrp
-	
+
+	sysuse  nlsw88, clear
+    binvar age, interval(5) gen(agegrp) debug replace
+    tab agegrp, mi
+    
 	assert inrange(year, 1900, 1904) if ygrp==1
 	assert inrange(year, 1980, 1984) if ygrp== 17
 	
