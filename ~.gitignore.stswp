@@ -1,0 +1,23 @@
+#git ignore file
+
+
+*.bac
+
+*.ster
+
+*.dta
+
+*.docx
+
+*.mata
+
+*.stswp
+
+
+
+
+test_*
+
+dev.do
+
+
