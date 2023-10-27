@@ -1,14 +1,14 @@
 {smcl}
-{* *! version 1.0 201902 }{...}
+{* *! version 1.0 20231023 }{...}
 {right:version 1.0}
 {title:Title}
 {phang}
-{bf:estimates_table_docx} {hline 2} Command for creating a binned indicator variable from a continious numerical variable. 
+{bf:binvar} {hline 2} Command for creating a grouped/binned indicator variable from a continious numerical variable. 
 
 {marker syntax}{...}
 {title:Syntax}
 {p 8 17 2}
-{cmdab:cut2}
+{cmdab:binvar}
 varlist
 [{cmd:,}
 {it:options}]
@@ -17,10 +17,11 @@ varlist
 {synopthdr}
 {synoptline}
 {syntab:Main}
-{synopt:{opt interval(integer)}}Length of interval.{p_end}
-{synopt:{opt start(integer)}}Start of first intervall.{p_end}
-{synopt:{opt generate(newname)}}Name of the gererated variable.{p_end}
-{synopt:{opt replace}}Replace newname if it exists.{p_end}
+
+{synopt:{opt generate(newname)}}Name of the gererated grouped/binned variable.{p_end}
+{synopt:{opt interval(integer)}}Length of interval that makes up the groups/binns.{p_end}
+{synopt:{opt lastbin(missing, expand)}}Optional methods to handle the last group if it is not possible to make the last binn equal to the specifyed interval.{p_end}
+{synopt:{opt replace}}Replace newname if it already exists.{p_end}
 {synoptline}
 {p2colreset}{...}
 {p 4 6 2}
@@ -31,23 +32,23 @@ varlist
 {pstd}
 
 {pstd}
-{cmd:cut2} 
-Command for creating a binned indicator variable from a continious numerical variable.
+{cmd:binvar} 
+Command for creating a grouped/binned indicator variable from a continious numerical variable. Command takes the numerical varaible and partitions it into binns/groups of the lenght specified in intervall.
 {marker options}{...}
 {title:Options}
 {dlgtab:Main}
 
 {phang}
-{opt start(integer)}Start of first intervall.
+{opt generate(newname)}Name of the gererated grouped/binned variable.
 
 {phang}
-{opt end(integer)} Start of last intervall.
+{opt interval(integer)}Length of the groups/binns.
 
 {phang}
 {opt interval(integer)} Length of interval.
 
 {phang}
-{opt generate(newvarname)} Name of the gererated variable.
+{opt lastbin(missing, expand)} Optional, allowed is missing or expand. If this option is not provided and the range of the variable to be grouped/binned is not equally divisble by intervall the last group includes the values that are larger than the endvalue of the group prior to the last up to the maximum value.
 
 {phang}
 {opt replace} Replace newname if it exists.

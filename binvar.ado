@@ -68,6 +68,10 @@ program define binvar
 		as result " `range'" ///
 		as text " distinct values (including gaps) which is not equaly divisible by" ///
 		as result " `interval'"
+        di as text "Decide how to handle the last interval which will not be equal to `interval'." 
+        di as text "Default behaviour is to incude the values up to max in dataset in the last binn even if this is less than intervall."
+        di as text "Different approches can be requested by specifying option lastbin(missing, expand ) "
+        
 	}
     
     /***************************************************************************/
