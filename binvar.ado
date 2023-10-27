@@ -2,19 +2,17 @@
 capture program drop binvar
 program define binvar
 	version 18
-	// varlist     (name of variable to be recoded into a binned version)
-    // interval    (length of interval)
-	// start       (lowest value starting first interval default is var minimum)
-	// generate    (name of the gererated variable)
-	// greedy      (include values higher than end in last bin)
-	// replace     (replace newvar if it exists)
+	// varlist                       # name of variable to be recoded into a binned version)
+    // generate                      # name of the gererated variable)
+    // interval                      # length of interval)
+    // lastinterval(missing, expand) # how to hadle the last interval if it is not evenly divisible by interval
+	// replace                       # replace newvar if it exists)
     // gapignore
 	
 	syntax varlist(min=1 max=1), ///
     GENerate(name) ///
 	Interval(numlist) ///
     [, lastbin(string)] ///
-    [Start(numlist)] ///
     [gapignore] ///
     [replace] ///
     [debug]
