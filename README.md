@@ -26,7 +26,7 @@ Options           | Description
 ----------------- | -------------
 generate(newname) | Name of the gererated grouped/binned variable.
 interval(integer) | Length of interval that makes up the groups/binns.
-lastbin(string)   | Optional, allowed is *missing* or *expand*. If this option is not provided and the range of the variable to be grouped/binned is not equally divisble by intervall
+lastbin(string)   | Optional, allowed is *missing* or *expand*. If this option is not provided and the range of the variable to be grouped/binned is not equally divisble by intervall the last bin will only cotain the remaning avliable values up to the maximum value.
 replace           | Replace newname if it already exists.
 interval(integer) | Length of interval.
 start(integer)    | Start of first intervall.
