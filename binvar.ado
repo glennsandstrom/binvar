@@ -2,30 +2,26 @@
 capture program drop binvar
 program define binvar
 	version 18
-<<<<<<< HEAD
+
 	// varlist                       # name of variable to be recoded into a binned version)
     // generate                      # name of the gererated variable)
     // interval                      # length of interval)
     // lastinterval(missing, expand) # how to hadle the last interval if it is not evenly divisible by interval
 	// replace                       # replace newvar if it exists)
-=======
+
 	// varlist     (name of variable to be recoded into a binned version)
     // interval    (length of interval)
 	// start       (lowest value starting first interval default is var minimum)
 	// generate    (name of the gererated variable)
 	// greedy      (include values higher than end in last bin)
 	// replace     (replace newvar if it exists)
->>>>>>> a24572f (First working version)
     // gapignore
 	
 	syntax varlist(min=1 max=1), ///
     GENerate(name) ///
 	Interval(numlist) ///
     [, lastbin(string)] ///
-<<<<<<< HEAD
-=======
     [Start(numlist)] ///
->>>>>>> a24572f (First working version)
     [gapignore] ///
     [replace] ///
     [debug]
@@ -79,13 +75,9 @@ program define binvar
 		as result " `range'" ///
 		as text " distinct values (including gaps) which is not equaly divisible by" ///
 		as result " `interval'"
-<<<<<<< HEAD
         di as text "Decide how to handle the last interval which will not be equal to `interval'." 
         di as text "Default behaviour is to incude the values up to max in dataset in the last binn even if this is less than intervall."
         di as text "Different approches can be requested by specifying option lastbin(missing, expand ) "
-        
-=======
->>>>>>> a24572f (First working version)
 	}
     
     /***************************************************************************/

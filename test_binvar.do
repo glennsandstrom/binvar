@@ -34,7 +34,6 @@ do binvar.ado
 
 	// check that bpgrp have corect values
 	binvar bp, interval(5) lastbin(missing) gen(bpgrp) debug replace
-<<<<<<< HEAD
 	assert inrange(bp, 125, 129) if bpgrp==0
 	assert inrange(bp, 180, 184) if bpgrp==11
     assert mi(bpgrp) if inrange(bp, 185, 185)
@@ -59,7 +58,6 @@ do binvar.ado
     tab ygrp, missing
     
 	assert inrange(year, 1900, 1904) if ygrp==0
-=======
 	//assert inrange(bp, 125, 129) if bpgrp==0
 	//assert inrange(bp, 185, 189) if bpgrp==12
 	tab bpgrp, mi
@@ -70,7 +68,6 @@ do binvar.ado
 	tab bpgrp
 	
 	assert inrange(year, 1900, 1904) if ygrp==1
->>>>>>> a24572f (First working version)
 	assert inrange(year, 1980, 1984) if ygrp== 17
 	
 	binvar year, start(1900) end(1980) interval(5) gen(ygrp) replace
