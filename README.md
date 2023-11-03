@@ -20,29 +20,27 @@ Lightwight program to automate recoding of a continious variable to binned ordin
 
 Syntax
 ------
-binvar namelist [, options]
+binvar varname [, options]
 
 Options           | Description
 ----------------- | -------------
-saving(filename)  | Path/filename of the generated docx file.
-inline            | Add table to a docx in memory rather than saving to standalone file.
-title(string)     | Optional title for table.
-colabels(string)  | Optional labels for columns. Supply list of column number # "label"... Default is to label models/columns using the names of the stored estimates used to form the table.
-bfmt(%fmt)        | Stata format used for coefficients. Default is %9.2f
-star(numlist)     | Numlist of significance levels. If option is omitted significance is reported numerically.
-nopval            | Do not report significance levels.
-ci(%fmt)          | Stata format used for 95% confidence intervals. If option is omitted no CIs are not reported.
-stats(scalarlist) | Report scalarlist in table. Allowed is N aic bic
-baselevels        | Include all baselevels.
-keep(coflist)     | List of coefficient to include in table.
-pagesize(psize)   | Set pagesize of Word document.
-landscape         | Use landscape layout for word document.
-eform             | Report parameters as exp(B).
+generate(newname) | Name of the gererated grouped/binned variable.
+interval(integer) | Length of interval that makes up the groups/binns.
+lastbin(string)   | Optional, allowed is *missing* or *expand*. If this option is not provided and the range of the variable to be grouped/binned is not equally divisble by intervall
+replace           | Replace newname if it already exists.
+interval(integer) | Length of interval.
+start(integer)    | Start of first intervall.
+generate(newname) | Name of the gererated variable.
+replace           | Replace newname if it exists.
+
 
 
 
 Description
 ------------
+
+    binvar Command for creating a grouped/binned indicator variable from a continious numerical variable. Command takes the numerical varaible and partitions it into binns/groups of the
+    lenght specified in intervall.  
 
 
 Examples
@@ -50,9 +48,18 @@ Examples
 
 Setup
 ```stata
-sysuse nlsw88, clear
+sysuse bplong, clear
+```
 
+Run command on the varible bp to binn bloodpressure values into intervals of five.
+```stata
+binvar bp, interval(5) lastbin(missing) gen(bpgrp) replace
+```
 
+Tabulate the generated binned variable.
+```stata
+tab bpgrp
+```
 
 Author
 -------
