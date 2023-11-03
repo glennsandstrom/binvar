@@ -5,7 +5,7 @@ Installation
 ============
 Either use net command in Stata:
 ```stata
-net install binvar , from(https://github.com/glennsandstrom/binvar/raw/master/)
+net install binvar , from(https://github.com/glennsandstrom/binvar/raw/main/)
 ```
 Usage
 =====
