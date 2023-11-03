@@ -17,17 +17,14 @@ varname
 {synopthdr}
 {synoptline}
 {syntab:Main}
-<<<<<<< HEAD
 {synopt:{opt generate(newname)}}Name of the gererated grouped/binned variable.{p_end}
 {synopt:{opt interval(integer)}}Length of interval that makes up the groups/binns.{p_end}
 {synopt:{opt lastbin(string)}}Optional methods to handle the last binn.{p_end}
 {synopt:{opt replace}}Replace newname if it already exists.{p_end}
-=======
 {synopt:{opt interval(integer)}}Length of interval.{p_end}
 {synopt:{opt start(integer)}}Start of first intervall.{p_end}
 {synopt:{opt generate(newname)}}Name of the gererated variable.{p_end}
 {synopt:{opt replace}}Replace newname if it exists.{p_end}
->>>>>>> a24572f (First working version)
 {synoptline}
 {p2colreset}{...}
 {p 4 6 2}
